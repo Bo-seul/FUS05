@@ -12,18 +12,16 @@ body{
     flex-flow: row wrap;
     justify-content: space-between;
     align-content: space-between;
+    padding: 10px 15px;
     
 }
 .box{width:200px;
     height:150px;
-    margin-bottom: 15px;
+    margin:10px 0;
 
 }
 .box:nth-child(odd){background-color: tomato;
 }
 
 .box:nth-child(even){background-color: yellowgreen;
-}
-.box7{
-    order: -1;
 }
