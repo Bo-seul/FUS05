@@ -1,0 +1,46 @@
+@charset "utf-8";
+body {
+  margin: 0;
+  background-color: yellow;
+}
+.box1 {
+  background-color: lightsalmon;
+}
+.box2 {
+  background-color: lightgreen;
+}
+.box3 {
+  background-color: lightskyblue;
+}
+.box4 {
+  background-color: grey;
+}
+@media screen and (max-width: 767px) and (max-width: 320px) {
+  body {
+    background-color: tomato;
+  }
+  .container {
+    display: grid;
+    grid-template-areas: "box";
+    grid-auto-columns: 100%;
+    grid-auto-rows: 100px;
+  }
+  .box4{
+      order:-1; 
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    background-color: lightgrey;
+  }
+  .container {
+    display: grid;
+    grid-template-areas: "box box";
+    grid-auto-columns: 50%;
+    grid-auto-rows: 100px;
+  }
+}
+.box4 {
+  grid-row-start: 2;
+  grid-column-start: 1;
+}
