@@ -1,0 +1,98 @@
+@charset "utf-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* 숨김 콘텐츠 */
+.rederble-hidden {
+  background-color: darkcyan;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
+body {
+}
+
+/* 모바일 디바이스 */
+@media screen and (max-width: 999px) {
+  /* 모바일로고 */
+  .logo {
+    width: 50%;
+    margin: 0 auto;
+  }
+  /* 모바일 메뉴 */
+  .menu {
+    background-color: rgb(250, 229, 185);
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+  }
+  .menu a {
+    background-color: rgb(243, 143, 126);
+    padding: 1em;
+    text-transform: uppercase;
+  }
+}
+/* 데스크탑 디바이스 */
+@media screen and (min-width: 1000px) {
+  /* 데스크탑 헤더 */
+  .header {
+    display: grid;
+    grid-template-areas: "logo  menu";
+    background-color: salmon;
+    align-items: center;
+    padding: 1em 2em;
+    top:0;
+    left:0;
+    position: fixed;
+    width:100%;
+
+  }
+  /* 데스크탑 로고 */
+  .logo {
+    grid-area: logo;
+    width: 50%;
+    background-color: sandybrown;
+  }
+  /* 데스크탑 메뉴 */
+  .menu {
+    grid-area: menu;
+    display: flex;
+    background-color: rgb(255, 211, 182);
+  }
+  .menu a {
+      display: block;
+      padding: 1em 1em 1em 0;
+    }
+    .menu a::before {
+        content: "|";
+        padding-right: 1em;
+    }
+    .menu li :first-child a::before{
+        content:"";
+  
+    }
+    .ad{background-color: pink;
+    height: 50vh;}
+    .main{background-color: purple;
+    height: 50vh;}
+    .footer{background-color: rgb(189, 38, 88);
+        height: 50vh;}
+
+    }
