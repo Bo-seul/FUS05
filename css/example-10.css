@@ -1,0 +1,36 @@
+@charset "utf-8";
+body {
+  margin: 0;
+}
+div {
+  background: gray;
+}
+h1 {
+  background-color: gold;
+  position: relative;
+  top: -5px;
+  left: -5px;
+}
+h2 {
+  box-shadow: 5px 5px 0 0 gray;
+  background: tomato;
+}
+.box {
+  background-color: lightgray;
+  height: 200px;
+  width: 500px;
+  position: relative;
+}
+h3 {
+  background-color: purple;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+span {
+  background-color: #0cf;
+  width: 100px;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+}
