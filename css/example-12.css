@@ -17,8 +17,7 @@ img {
   height: auto;
 }
 /* 숨김 콘텐츠 */
-.rederble-hidden {
-  background-color: darkcyan;
+.readable-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -26,73 +25,205 @@ img {
   margin: -1px;
   clip: rect(0, 0, 0, 0);
 }
+
 body {
+  background: url("../images/고해상도 이미지.png") no-repeat 0 0 / cover
+    fixed;
+}
+/* 헤더 공통 */
+.header {
+  background-color: #fff;
+  z-index: 10;
+}
+/* 광고섹션 공통 */
+.ad {
+  color: #fff;
+  font-size: 3em;
+  min-height: 500px;
+  /* display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 1em; */
+}
+.ad-content {
+  position: sticky;
+  top: 100px;
+  text-align: right;
+}
+
+/* 메인 공통 */
+.main {
+  background-color: #fff;
+}
+/* 푸터 공통 */
+.footer {
+  background-color: #181818;
+  color: #fff;
+}
+/* 모바일 Small 디바이스 */
+@media screen and (min-width: 1px) and (max-width: 550px) {
+  /* 모바일 Small 로고 */
+  .logo {
+    background: no-repeat;
+    width: 35%;
+    margin-left: 2em;
+  }
+  /* 모바일 Small 메뉴 */
+  .btn-wrapper {
+    background: no-repeat;
+    position: fixed;
+    top: 0.5em;
+    right: 1em;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+  }
+  .btn-menubar {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+  .menubar {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    background: #181818;
+    border-radius: 10px;
+    width: 100%;
+    height: 25%;
+    transition: all 200ms;
+  }
+  .menubar-top {
+    top: 0;
+  }
+  .menubar-middle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .menubar-bottom {
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  .menubar-act.menubar-top {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .menubar-act.menubar-middle {
+    transform: translate(-100%, -50%);
+  }
+  .menubar-act.menubar-bottom {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  .menu {
+    background: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    z-index: 10;
+    color: #fff;
+    padding: 3em 0 0 2em;
+    transform: translateX(-100%);
+    transition: all 200ms;
+  }
+  .menu-act {
+    transform: translateX(0);
+  }
+  .main box{
+    min-height: 100px;
+    margin: 1em;
+  }
 }
 
 /* 모바일 디바이스 */
-@media screen and (max-width: 999px) {
-  /* 모바일로고 */
+@media screen and (min-width: 551px) and (max-width: 999px) {
+  /* 모바일 로고 */
   .logo {
     width: 50%;
     margin: 0 auto;
   }
   /* 모바일 메뉴 */
+  .btn-wrapper {
+    display: none;
+  }
   .menu {
-    background-color: rgb(250, 229, 185);
-    padding: 1em;
     display: flex;
     justify-content: space-around;
   }
   .menu a {
-    background-color: rgb(243, 143, 126);
+    display: block;
     padding: 1em;
     text-transform: uppercase;
   }
+/* 모바일 메인 */
+.main{
+  overflow: hidden;
+}
+.box{
+  float: left;
+  width: 45%;
+  height: 150px;
+  margin: 1em 2.5%; 
+
+}
+
+}
 }
 /* 데스크탑 디바이스 */
 @media screen and (min-width: 1000px) {
   /* 데스크탑 헤더 */
   .header {
     display: grid;
-    grid-template-areas: "logo  menu";
-    background-color: salmon;
+    grid-template-areas: "logo    menu";
     align-items: center;
     padding: 1em 2em;
-    top:0;
-    left:0;
-    position: fixed;
-    width:100%;
-
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
   /* 데스크탑 로고 */
   .logo {
     grid-area: logo;
-    width: 50%;
-    background-color: sandybrown;
+    width: 20%;
   }
   /* 데스크탑 메뉴 */
+  .btn-wrapper {
+    display: none;
+  }
   .menu {
     grid-area: menu;
     display: flex;
-    background-color: rgb(255, 211, 182);
   }
   .menu a {
-      display: block;
-      padding: 1em 1em 1em 0;
-    }
-    .menu a::before {
-        content: "|";
-        padding-right: 1em;
-    }
-    .menu li :first-child a::before{
-        content:"";
-  
-    }
-    .ad{background-color: pink;
-    height: 50vh;}
-    .main{background-color: purple;
-    height: 50vh;}
-    .footer{background-color: rgb(189, 38, 88);
-        height: 50vh;}
-
-    }
+    display: block;
+    padding: 1em 1em 1em 0;
+  }
+  .menu a::before {
+    content: "|";
+    padding-right: 1em;
+  }
+  .menu li:first-child a::before {
+    content: "";
+  }
+  /* 데스크탑 메인 */
+  .main {
+    display: grid;
+    grid-auto-columns: 20%;
+    grid-auto-rows: 150px;
+    grid-template-areas: "box box box box";
+    justify-content: space-between;
+    grid-row-gap: 50px;
+    padding: 2em;
+  }
+  .main .box{
+  }
+  /* 데스크탑 푸터 */
+  .footer {
+    height: 50vh;
+  }
+}
